@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 # Installs and setup haproxy
 
-# Add HAProxy PPA
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-1.8
 apt-get -y update
-apt-get -y upgrade
-apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.5
-apt-get -y update
+apt-get install -y haproxy=1.8.\*
 
 echo "ENABLED=1" > /etc/default/haproxy
 
